@@ -23,11 +23,11 @@
 - 2) initialize state(wins, total)
 - 3) set event listeners
     - on click: 
-        - show hidden computer result
         - increment total
         - generate computer guess
             - function getRandomThrow()
             - function computersThrow
+        - show computers result
         - check and see if player guess is equal to computer guess
             - function didUserWin(player, computer)
         - show message based on result and increment wins accordingly

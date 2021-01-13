@@ -1,5 +1,5 @@
 // IMPORT MODULES under test here:
-import { computerThrow } from '../utils.js';
+import { computerThrow, didUserWin } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -18,6 +18,24 @@ test(' this function will given 0 return rock, given 1 return paper, given 2 ret
 
     const expected2 = 'scissors';
     const actual2 = computerThrow(2);
+    
+    expect.equal(actual2, expected2);
+});
+//did user win test
+test('this function will: given rock and scissors return win, given rock and rock return draw, given rock and paper return lose', (expect) => {
+
+    const expected = 'lose';
+    const actual = didUserWin('paper', 'scissors');
+    
+    expect.equal(actual, expected);
+
+    const expected1 = 'win';
+    const actual1 = didUserWin('rock', 'scissors');
+    
+    expect.equal(actual1, expected1);
+
+    const expected2 = 'draw';
+    const actual2 = didUserWin('rock', 'rock');
     
     expect.equal(actual2, expected2);
 });
