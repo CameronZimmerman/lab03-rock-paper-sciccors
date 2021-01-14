@@ -27,10 +27,15 @@ throwButton.addEventListener('click', () => {
     const computersCurThrow = computerThrow(getRandomThrow());
     showComputerSelectionImg(computersCurThrow, opponentSelectionImg);
 
-    const userThrow = document.querySelector('input[type ="radio"]:checked').value;
+    const userThrow = document.querySelector('input[type ="radio"]:checked') !== null ? document.querySelector('input[type ="radio"]:checked').value : 'none';
+
+    if (userThrow === 'none'){
+        opponentMessageDiv.textContent = 'make a selection... or are you SCARED!?!?';
+    }
 
     const userResultString = didUserWin(userThrow, computersCurThrow);
 
+    console.log(userThrow);
     if (userResultString === 'win'){
         wins ++;
         opponentMessageDiv.textContent = 'Wow, you beat me!';
@@ -54,6 +59,8 @@ resetButton.addEventListener('click', () => {
     total = 0;
     updateView();
     opponentSelectionImg.src = 'assets/blackimg.png';
+    opponentMessageDiv.textContent = 'Ready to lose approximately 33% of the time?!?!?';
+
 }); 
 
 function updateView() {

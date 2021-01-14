@@ -22,6 +22,4 @@ export function didUserWin(userThrow, computerThrow) {
             return 'lose';
         }
     }
-
-    
 }
