@@ -29,10 +29,8 @@ throwButton.addEventListener('click', () => {
 
     const userThrow = document.querySelector('input[type ="radio"]:checked') !== null ? document.querySelector('input[type ="radio"]:checked').value : 'none';
 
-    if (userThrow === 'none'){
-        opponentMessageDiv.textContent = 'make a selection... or are you SCARED!?!?';
-    }
-
+    if (userThrow === 'none') opponentMessageDiv.textContent = 'make a selection... or are you SCARED!?!?';
+    
     const userResultString = didUserWin(userThrow, computersCurThrow);
 
     if (userResultString === 'win'){
@@ -44,10 +42,7 @@ throwButton.addEventListener('click', () => {
         opponentMessageDiv.textContent = 'draw huh? LET\'S GO AGAIN!';
 
     }
-    if (userResultString === 'lose'){
-        opponentMessageDiv.textContent = 'Haha, take that!';
-    }
-
+    if (userResultString === 'lose') opponentMessageDiv.textContent = 'Haha, take that!'; 
     updateView();
 
 }); 
