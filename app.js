@@ -35,7 +35,6 @@ throwButton.addEventListener('click', () => {
 
     const userResultString = didUserWin(userThrow, computersCurThrow);
 
-    console.log(userThrow);
     if (userResultString === 'win'){
         wins ++;
         opponentMessageDiv.textContent = 'Wow, you beat me!';
